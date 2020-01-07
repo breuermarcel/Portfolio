@@ -1,0 +1,22 @@
+.about-section {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, $black 0%,#{fade-out($black, .1)} 75%,#{fade-out($black, .2)} 100%);
+  p {
+    margin-bottom: 5rem; 
+  }
+  .profile-banner {
+    margin-top: 2.5rem;
+    .LI-badge-container.horizontal.light {
+      width: 100% !important;
+      background-color: $white;
+    }
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 575px) {
+      text-align: center;
+      flex-basis: unset;
+    }
+  }
+}
