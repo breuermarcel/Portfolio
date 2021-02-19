@@ -20,16 +20,12 @@
         offset: 100
     });
     var navbarCollapse = function() {
-        if (jQuery(window).width() > 475) {
-            if (jQuery("#mainNav").offset().top > 100) {
-                jQuery("#mainNav").addClass("navbar-shrink");
-                jQuery("#navbar-logo").attr("src", "./dist/img/Black_Logo.svg");
-            } else {
-                jQuery("#mainNav").removeClass("navbar-shrink");
-                jQuery("#navbar-logo").attr("src", "./dist/img/White_Logo.svg");
-            }
-        } else {
+        if (jQuery("#mainNav").offset().top > 100) {
+            jQuery("#mainNav").addClass("navbar-shrink");
             jQuery("#navbar-logo").attr("src", "./dist/img/Black_Logo.svg");
+        } else {
+            jQuery("#mainNav").removeClass("navbar-shrink");
+            jQuery("#navbar-logo").attr("src", "./dist/img/White_Logo.svg");
         }
     };
     navbarCollapse();

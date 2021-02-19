@@ -1,11 +1,21 @@
 #mainNav {
-  min-height: 56px;
   background-color: $white;
+  border-bottom: none;
+  background-color: transparent;
+  min-height: 7.5rem;
+  transition: min-height 1s;
+
+  .navbar-brand {
+    color: $white;
+
+    #navbar-logo {
+      max-width: 2.5rem;
+    }
+  }
 
   .navbar-toggler {
     font-size: 80%;
-    padding: 0.75rem;
-    color: $black;
+    color: $white;
     border: 0px !important;
 
     &:focus {
@@ -13,10 +23,15 @@
     }
   }
 
-  .navbar-brand {
-    color: $black;
-    font-weight: 700;
-    padding: .9rem 0;
+  .nav-link {
+    transition: none;
+    -webkit-transition: none;
+    color: $white;
+    transition: all ease-in .25s;
+
+    &:hover {
+      color: $primary;
+    }
   }
 
   .navbar-nav {
@@ -35,56 +50,41 @@
     }
   }
 
-  @media (min-width: 475px) {
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
-    .navbar-brand {
-      padding: .5rem 0;
-      color: rgba($white, .5);
+  &.navbar-shrink {
+    background-color: $white;
+    min-height: 5rem;
+
+    .navbar-brand, .navbar-toggler {
+      color: $black;
     }
+
     .nav-link {
-      transition: none;
-      padding: 2rem 1.5rem;
-      -webkit-transition: none;
-      padding: 2rem 1.5rem;
-      color: rgba($white, 0.5);
-      transition: all ease-in .25s;
+      color: $black;
 
       &:hover {
-        color: rgba($white, .25);
+        color: $primary;
       }
 
       &:active {
-        color: $white;
-      }
-    }
-    &.navbar-shrink {
-      background-color: $white;
-
-      .navbar-brand {
-        color: $black;
+        color: darken($primary, 15%);
       }
 
-      .nav-link {
-        color: $black;
-        padding: 1.5rem 1.5rem 1.25rem;
-        border-bottom: 0.25rem solid transparent;
+      &.active {
+        position: relative;
+        color: rgba($primary, .7);
+        outline: none;
 
-        &:hover {
-          color: $primary;
-        }
-
-        &:active {
-          color: darken($primary, 15%);
-        }
-
-        &.active {
-          color: rgba($primary, .7);
-          outline: none;
-          border-bottom: 0.25rem solid rgba($primary, .7);
+        &:after {
+          position: absolute;
+          content: '';
+          bottom: -1.25rem;
+          left: 0;
+          height: .2rem;
+          width: 100%;
+          background-color: $primary;
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
     }

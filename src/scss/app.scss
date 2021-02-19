@@ -1,27 +1,21 @@
-@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
-
 @import 'variables';
 @import 'navbar';
 @import 'masthead';
-@import 'buttons';
 @import 'about';
-@import 'projects';
-@import 'skills';
 @import 'signup';
 @import 'contact';
 
 body {
-  font-family: $font-family;
-  font-size: 1.15rem;
+  font-family: $font-family-sans-serif;
 }
 
-a {
+a, .default-link {
+  cursor: pointer;
   color: $primary;
 
   &:focus,
   &:hover {
     text-decoration: none;
-    color: darken($primary, 20%);
   }
 }
 
@@ -29,41 +23,21 @@ a {
   background-color: $black !important;
 }
 
-.bg-primary {
-  background-color: $primary !important;
-}
-
-.text-primary {
-  color: $primary !important;
-}
-
-.default-link {
-  color: $primary;
-}
-
-.shown {
-  display: block !important;
-}
-
-.light {
-  background: $white;
-}
-
-i.icon {
+.icon {
   color: $white;
-  transition: all ease-in .25s;
-}
+  transition: all ease-in .25s; 
 
-i.icon:hover {
-  color: $primary;
+  &:hover {
+    color: $primary;
+  }
 }
 
 hr {
   max-width: 50px;
   border-color: $primary;
-  border-width: 3px
+  border-width: 2px;
 }
 
-footer {
-  padding: 5rem 0;
+.cursor-pointer {
+  cursor: pointer;
 }
